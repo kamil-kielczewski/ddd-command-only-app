@@ -1,0 +1,52 @@
+version: "3.9"
+services:
+  cmd: # run this container by: "docker compose run cmd" (type "exit" to close container)
+    container_name: sqar-spaceplan-frontend-cmd-1
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    profiles: ["nondefalut"]
+    command: bash -c "bash"
+
+  start: # this container is for development
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    command:
+      - bash
+      - -c
+      - |
+        echo "--------------------------------------------------------------"
+        echo "Go to http://sqar-front.local:3002/ in your browser"
+        npm start
+
+  build: # build dist folder with js code
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    profiles: ["nondefalut"]
+    command: bash -c "npm run build"
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    profiles: ["nondefalut"]
+    command: bash -c "npm run test" # for more workers possible crashes on docker
+
+  test-file:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/work
+    profiles: ["nondefalut"]
+    command: bash -c "npm run test -- --testPathPattern=src/subdomains/example-module-domain/ports/in/use-cases/create-issue-example/create-issue-example.usecase.spec.ts"

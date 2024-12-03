@@ -1,0 +1,30 @@
+{
+  "name": "@ddd/template",
+  "version": "-",
+  "__comment": "DDD",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "start": "rm -rf dist && tsc-watch --onSuccess \"node dist/infrastructure/main.js\""
+  },
+  "description": "Common data model for xSQAR integration.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "resources/*"
+  ],
+  "dependencies": {
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "29.7.0",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "tsc-watch": "^6.2.1"
+  },
+  "author": "KK",
+  "license": "UNLICENSED"
+}

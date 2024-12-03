@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "target": "ES2015",
+    "declaration": true,
+    "strict": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "lib": ["es2018", "dom"],
+    "types": ["jest"]
+  },
+  "include": ["src/**/*"]
+}
