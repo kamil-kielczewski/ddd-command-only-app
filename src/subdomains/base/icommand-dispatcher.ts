@@ -1,6 +1,6 @@
-import { Observable } from "rxjs";
-import { ICommand } from "./icommand.js";
+import { Observable } from 'rxjs';
+import { ICommand } from './icommand.js';
 
 export interface ICommandDispatcher {
-  execute<T>(command: ICommand<T>): Observable<T>;
+    execute<T = any>(command: ICommand<T>): Observable<T>;
 }
