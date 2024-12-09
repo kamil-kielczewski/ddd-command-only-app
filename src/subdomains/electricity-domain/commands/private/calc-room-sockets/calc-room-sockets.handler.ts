@@ -1,5 +1,5 @@
 import { Observable, of } from 'rxjs';
-import { ICommandHandler } from '../../../base/icommand-handler.command.js';
+import { ICommandHandler } from '../../../../base/icommand-handler.command.js';
 import { CalcRoomSocketsCommand } from './calc-room-sockets.command.js';
 
 export class CalcRoomSocketsHandler implements ICommandHandler<number[]> {

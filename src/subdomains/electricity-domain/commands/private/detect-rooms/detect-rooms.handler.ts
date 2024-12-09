@@ -1,7 +1,7 @@
 import { Observable, of } from 'rxjs';
-import { Point } from '../../base/value-objects/point.js';
-import { ICommandHandler } from '../../../base/icommand-handler.command.js';
-import { Room } from '../../base/entities/room.entity.js';
+import { Point } from '../../../base/value-objects/point.js';
+import { ICommandHandler } from '../../../../base/icommand-handler.command.js';
+import { Room } from '../../../base/entities/room.entity.js';
 import { DetectRoomsCommand } from './detect-rooms.command.js';
 
 export class DetectRoomsHndler implements ICommandHandler<Room[]> {
